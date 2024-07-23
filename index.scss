@@ -1,0 +1,84 @@
+// Define your color palette
+$primary: #007bff;
+$secondary: #ffc107;
+$text-color: #212529;
+$gray: #f8f9fa;
+// ... add more colors as needed
+
+// Define spacing values for margins and paddings
+$spacing-unit: 8px; // Base unit for spacing
+
+// Define margins and paddings using mixins
+@mixin margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding: $top $right $bottom $left;
+}
+
+// Usage examples
+.container {
+  @include margin($spacing-unit * 2);
+}
+
+.content {
+  @include padding($spacing-unit);
+}
+
+// Define font sizes, weights, and families
+$font-family: Arial, sans-serif;
+$base-font-size: 16px;
+
+// Define heading styles
+.heading-1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.heading-2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+// ... define styles for other text elements
+/ Define grid layout or other layout components .container {
+  width: 75%;
+  margin: 0 auto; // Center the container horizontally
+}
+
+// ... define other layout classes like rows and columns
+// Define button styles with different colors and sizes
+
+.btn {
+  display: inline-block;
+  padding: $spacing-unit * 1.5;
+  border: none;
+  border-radius: 4px;
+  font-size: $base-font-size;
+  cursor: pointer;
+
+  // Add variants for different colors and sizes
+  &.primary {
+    background-color: $primary;
+    color: white;
+  }
+
+  &.secondary {
+    background-color: $secondary;
+    color: $text-color;
+  }
+}
+// Import all your partial scss files here
+@import "colors";
+@import "spacing";
+@import "typography";
+@import "layout" (optional);
+@import "buttons" (optional); // Import buttons if you created them
+
+// You can add some global styles here as well
+body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  color: $text-color;
+}
